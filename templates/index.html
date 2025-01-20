@@ -1,0 +1,116 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link
+  href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+  rel="stylesheet"
+  id="bootstrap-css"
+  />
+  <link rel="stylesheet" href="{{ url_for('static',filename='style.css')}}">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Estimasi Harga Rumah</title>
+  </head> 
+  <body>
+    <div class="container contact-form">
+      <div class="contact-image">
+        <img
+          src="/static/pngwing.com.png"
+          alt="rumah"
+        />
+      </div>
+      <form action="{{url_for('predict')}}" method="post" autocomplete="off">
+        <h3>Estimasi Harga Rumah <br>jakarta selatan </h3>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <h6>Lebar Tanah<h6/>
+              <input
+                type="number"
+                id="LT"
+                name="LT"
+                class="form-control"
+                placeholder="Lebar Tanah"
+                value="1000"
+              />
+            </div>
+            <div class="form-group">
+              <h6>Lebar Bangunan<h6/>
+              <input
+                type="number"
+                id="LB"
+                name="LB"
+                class="form-control"
+                placeholder="Lebar Bangunan"
+                value="700"
+              />
+            </div>
+            <div class="form-group">
+              <h6>Jumlah Kamar Tidur<h6/>
+              <input
+                type="number"
+                id="JKT"
+                name="JKT"
+                class="form-control"
+                placeholder="Kamar Tidur"
+                value="3"
+              />
+            </div>
+            <div class="form-group">
+              <h6>Jumlah Kamar Mandi<h6/>
+              <input
+                type="number"
+                id="JKM"
+                name="JKM"
+                class="form-control"
+                placeholder="Kamar Mandi"
+                value="1"
+              />
+            </div>
+            <div class="form-group">
+              <h6>Jumlah Parkiran<h6/>
+              <input
+                type="number"
+                id="GRS"
+                name="GRS"
+                class="form-control"
+                placeholder="Parkiran Mobil"
+                value="0"
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="submit"
+                id="predict"
+                name="predict"
+                class="btnContact"
+                value="CEK HARGA"
+              />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <h6>KISARAN HARGA RUMAH :</h6>
+              <div class="harga">
+                <h2>{{ unique_viwers }}</h2>
+            </div>
+            <div class="gambar">
+            </div>
+            <div class="klompok">
+              <h3>KELOMPOK DATA MINING </h3>
+              <p>Rizky Maulana       14012200074 </p>
+              <p>M. Saipul Anam      14012200017 </p>
+              <p>Putut Wijaya Kusuma 14012200083 </p>
+            </div>
+          </div>
+        </div>
+        </div>
+      </form>
+    </div>
+  </body>
+  </html>
+
+
+
